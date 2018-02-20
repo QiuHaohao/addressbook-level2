@@ -140,4 +140,12 @@ public class UniquePersonList implements Iterable<Person> {
                 || (other instanceof UniquePersonList // instanceof handles nulls
                         && this.internalList.equals(((UniquePersonList) other).internalList));
     }
+
+    /**
+     * Sorts all persons in the list according to their full name
+     */
+    public void sort(){
+        internalList.sort((person1, person2) -> (person1.getName().fullName.toLowerCase().compareTo(
+                                                    person2.getName().fullName.toLowerCase())));
+    }
 }
